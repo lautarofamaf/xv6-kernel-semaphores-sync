@@ -1,10 +1,21 @@
-# Manual de Usuario: Implementación de Semáforos
+# Kernel-Level Semaphore Synchronization in xv6-riscv
 
+![C](https://img.shields.io/badge/C-A8B9CC?style=flat-square&logo=c&logoColor=black)
+![xv6](https://img.shields.io/badge/OS-xv6--riscv-orange?style=flat-square)
+![Concurrency](https://img.shields.io/badge/Concurrency-Kernel_Locks-red?style=flat-square)
+![Architecture](https://img.shields.io/badge/Arch-RISC--V-blue?style=flat-square)
 
-## Descripción General:
-Los semaforos son una herramienta de sincronización utilizada en sistemas operativos para controlar el acceso concurrente a recursos compartidos por múltiples procesos. La implementación de semáforos en este sistema sigue el modelo clásico de semáforos de valor entero.
+An operating system kernel implementation providing counting semaphore primitives and system calls in **xv6-riscv** for inter-process synchronization and race-condition elimination.
 
-## Funciones Disponibles:
+---
+
+## 📌 Overview
+
+Semaphores are fundamental synchronization primitives used in modern operating systems to coordinate concurrent access to shared resources. This project extends the xv6-riscv kernel by introducing atomic channel allocation, initialization, wait (`sem_down`), and signal (`sem_up`) system calls, verified through a concurrent `pingpong` process synchronization test.
+
+---
+
+## 🛠️ API & System Call Specification
 #### 1)
 
 ```c
